@@ -75,8 +75,6 @@ n_plot       =  10               # Multiplicative factor for thinner grid in plo
 
 debug        =  1                # Boolean for debug mode
 
-b0           =  2.7884
-
 
 #==============================================================================
 # 2.                           W E L C O M E
