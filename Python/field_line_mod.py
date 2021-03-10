@@ -122,7 +122,7 @@ def read_limiter(dataset):
 #>      $ limiter[0,0,:] = [0, 0, ... 1, 1, 1, ... 0, 0]
 #>
 #> REVISION HISTORY:
-#> 03 03 2021 - Carlos Romero
+#> 10 03 2021 - Carlos Romero
 #> 
 #> TO DO:
 #> -
