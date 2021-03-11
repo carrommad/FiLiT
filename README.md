@@ -5,9 +5,12 @@ This function traces magnetic field lines to compute Poincaré plots and connect
 ## 1. Definition of Field Line
 A magnetic field line is a 3D curve for which the magnetic field is tangent at every point.
 Define $\vec{\Gamma} \in \mathbf{R}^3$ as our 3D curve parametrized by $s \in \mathbf{R}$:
-$$ \frac{\partial \vec{\Gamma}}{\partial s} = \vec{B}$$
+- $$ \frac{\partial \vec{\Gamma}}{\partial s} = \vec{B}$$
 
-For simplication, consider the different component of our cuve as follows: $ \Gamma_R = R $, $ \Gamma_{\phi} = \phi $ and $ \Gamma_Z = Z $.
+For simplication, consider the different component of our cuve as follows: 
+- $ \Gamma_R = R $
+- $ \Gamma_{\phi} = \phi $
+- $ \Gamma_Z = Z $.
 
 To obtain the corresponding scalar components of the differential equation, the Jacobian needs to be taken into account.
 
