@@ -12,7 +12,8 @@ For simplication, consider the different component of our cuve as follows:
 - $ \Gamma_{\phi} = \phi $
 - $ \Gamma_Z = Z $.
 
-To obtain the corresponding scalar components of the differential equation, the Jacobian needs to be taken into account.
+To obtain the corresponding scalar components of the differential equation, the Jacobian needs to be taken into account. 
+- **Explain better and add Jacobian to each coordinate type**
 
 
 ### 1.1. Cylindrical Coordinates
@@ -22,19 +23,19 @@ The differential equation in cylindrical coordinates $[R, \phi, Z]$ for the fiel
 - $$ \frac{\partial Z}{\partial \phi} =  R \cdot \frac{B_Z}{B_{\phi}}$$
 
 
-being the finite differences:
+considerin *k* as the toroidal index, the finite differences equation is:
 
 - $$ R(k+1) = R(k) + \Delta \phi \cdot  R(k) \cdot \frac{B_R(k)}{B_{\phi}(k)}$$
 - $$ Z(k+1) = Z(k) + \Delta \phi \cdot  R(k) \cdot \frac{B_Z(k)}{B_{\phi}(k)}$$
 
 
 ### 1.2. Toroidal Coordinates
-The differential equation in toroidal coordinates [R, \phi, \theta] for the field lines being:
-**Pending implementation**
+The differential equation in toroidal coordinates $[R, \phi, \theta]$ for the field lines being:
+- **Pending implementation**
 
 
 ## 2. Limiter Geometry
-If a limiter or divertor 3-dimensional geometry is available, an option can be selected to compute more realistic trajectories.
+If a limiter or divertor 3-dimensional geometry is available, the option *lim_mod = 1* can be selected to compute more realistic trajectories.
 
 
 ## 3. INPUTS
@@ -44,19 +45,19 @@ To run this program, the following files are necessary:
  
 ## 4. EXAMPLE
 Links to example files:
-  - magnetic equilibrium: https://mega.nz/file/EwsVUIiA#ZyX3waZSOhuUkpyO_aMJv_z_cmZKIGY9fqAY1HmpriM
-  - limiter file: https://mega.nz/file/Y1dl1aCQ#_-FDM5VHMNyA5Q2acpxoYyqjTxWYKoSuEYIQ5iu2Wuc
+  - 3D magnetic equilibrium in netcdf format: https://mega.nz/file/EwsVUIiA#ZyX3waZSOhuUkpyO_aMJv_z_cmZKIGY9fqAY1HmpriM
+  - 3D limiter file in netcdf format: https://mega.nz/file/Y1dl1aCQ#_-FDM5VHMNyA5Q2acpxoYyqjTxWYKoSuEYIQ5iu2Wuc
   
 ## 5. RUNNING THE EXAMPLE
 To run the example:
   - write the name of the files (full path): magnetic equilibrium and limiter
-  - select if you want the limiter to be included with 'lim_mode'
-  - select if you want to compute the connection length with 'lc_mode'
-  - select if you want to print and plot debug options with 'debug'
+  - select if you want the limiter to be included with *lim_mode*
+  - select if you want to compute the connection length with *lc_mode*
+  - select if you want to print and plot debug options with *debug*
 
 
 ## 6. Currently working version
-At the moment, 'changes/Python' branch is the most updated. A pull request to 'main' branch of the *Python* version and completion of the *Fortran* version will be done soon.
+At the moment, *changes/Python* branch is the most updated. A pull request to *main* branch of the *Python* version and completion of the *Fortran* version will be done soon.
 
 ### 6.1 2D version
 2D magnetic field and limiter can be easily replicated in the toroidal dimension to create a 3D version.
