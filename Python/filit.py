@@ -1,5 +1,5 @@
 #==============================================================================
-# PROGRAM - filit_v1.1.py
+# PROGRAM - filit.py
 #==============================================================================
 #> 
 #> DESCRIPTION:
@@ -21,6 +21,7 @@
 #> 
 #> TO DO:
 #> - Comment 'plt.show()' for programmed shutdown
+#> - Make better names for auxiliary functions
 #> -
 #> 
 #==============================================================================
@@ -35,14 +36,14 @@ import numpy             as np
 import timeit
 import time
 
-from matplotlib     import pyplot as plt
-from field_line_mod import read_data_hint,                 \
-						   read_limiter,                   \
-						   limiter_boundary,               \
-						   create_targets,                 \
-						   step_phi_cylindrical,           \
-						   delete_outer_particles,         \
-						   delete_outer_particles_limiter
+from matplotlib import pyplot as plt
+from filib      import read_data_hint,                 \
+		       read_limiter,                   \
+		       limiter_boundary,               \
+		       create_targets,                 \
+		       step_phi_cylindrical,           \
+		       delete_outer_particles,         \
+		       delete_outer_particles_limiter
 
 from progress.bar import Bar
 
@@ -236,9 +237,9 @@ margin_top    = 70  * step_Z
 
 # - creating targets for given input values
 targets_R, targets_Z = create_targets(tar_mode, ntargets1D, rminb + margin_left,   \
-														    rmaxb - margin_right,  \
-															zminb + margin_bottom, \
-															zmaxb - margin_top)
+							    rmaxb - margin_right,  \
+							    zminb + margin_bottom, \
+							    zmaxb - margin_top)
 
 # - depending on the selected target mode we have ntargets1D or ntargets1D^2
 # total targets
@@ -254,7 +255,8 @@ nsteps = nturns * n_grid_phi_enhanced
 # - declare array to save intersections
 print('\n')
 print('NOTE: saving intersections on symmetric toroidal planes! ')
-# NOTE: multiplying by mtor allows us to save intersection points at every symmetry toroidal angle
+# NOTE: multiplying by mtor allows us to save intersection points at every 
+# symmetry toroidal angle
 intersect_R = np.nan * np.empty((ntargets, nturns * mtor))
 intersect_Z = np.nan * np.empty((ntargets, nturns * mtor))
 
