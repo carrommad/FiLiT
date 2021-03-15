@@ -1,5 +1,5 @@
 #==============================================================================
-# PROGRAM - filit_v2.0.py
+# PROGRAM - filit.py
 #==============================================================================
 #> 
 #> DESCRIPTION:
@@ -31,22 +31,21 @@
 import netCDF4           as nc
 import numpy             as np
 
-import timeit
 import time
 
 from matplotlib import pyplot as plt
-from filit_mod  import read_data_hint,     \
-					   read_limiter,       \
-					   limiter_boundary,   \
-					   create_targets,     \
-					   evolve_cylindrical, \
-					   inside_boundaries,  \
-					   inside_limiter,     \
-					   metric_cylindrical
+from filib      import read_data_hint,     \
+		       read_limiter,       \
+		       limiter_boundary,   \
+		       create_targets,     \
+		       evolve_cylindrical, \
+		       inside_boundaries,  \
+		       inside_limiter,     \
+		       metric_cylindrical
 
 from progress.bar import Bar
 
-from scipy.interpolate import interpn, interp2d
+from scipy.interpolate import interpn
 
 
 #==============================================================================
