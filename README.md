@@ -2,9 +2,25 @@
 This function traces magnetic field lines to compute Poincaré plots and connection length in tokamaks and stellarators given its 3-dimensional magnetic field components. 
 
 ## 0. Branches
-- *v1.0: This is the primary version where all functions were manually written*
-- ***v1.1: ***
-- *v2.0:*
+### v1.0
+- All interpolation functions are manually written.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were strongly needed.
+
+### v1.1 
+- All interpolation functions are Python imported.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Difficult to parallelize but **fastest version**.
+
+### v2.0
+- All interpolation functions are Python imported.
+- First loop on particles and then loop on turns.
+- Step size definition **uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Easier to parallelize particle loop but **slowest version**.
 
 ## 1. Definition of Field Line
 A magnetic field line is a 3D curve for which the magnetic field is tangent at every point.
