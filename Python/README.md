@@ -1,4 +1,5 @@
 # Available versions
+Two versions are provided, differing in structure but with very similar content (functions and plotting).
 
 ## 1. Turns -> Particles
 The functions named ***field_line_tracer*** are structured in this way: given a step size for a given major radius, the toroidal angle increment is computed so that the length increment for a particle in a major radius positions coincides with a desired value (in mm).
