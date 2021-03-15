@@ -1,5 +1,5 @@
 #==============================================================================
-# PROGRAM - field_line_tracer.py
+# PROGRAM - filit.py
 #==============================================================================
 #> 
 #> DESCRIPTION:
@@ -35,7 +35,7 @@ import timeit
 import time
 
 from matplotlib     import pyplot as plt
-from field_line_mod import read_data_hint,                 \
+from filib import read_data_hint,                 \
 						   read_limiter,                   \
 						   limiter_boundary,               \
 						   create_targets,                 \
