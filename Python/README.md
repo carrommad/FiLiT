@@ -1,7 +1,7 @@
 # Available versions
 Two versions are provided, differing in structure but with very similar content (functions and plotting).
 
-## 1. Turns -> Particles
+## v1. Turns -> Particles
 The functions named ***field_line_tracer*** are structured in this way: given a step size for a given major radius, the toroidal angle increment is computed so that the length increment for a particle in a major radius positions coincides with a desired value (in mm).
 
 Pros:
@@ -12,7 +12,7 @@ Cons:
 - Step size not the same for every particle as it depends on its radius (cylindrical geometry)
 - Difficult to parallelize (I've been told)
 
-## 2. Particles -> Turns
+## v2. Particles -> Turns
 The functions name ***filit*** are structured the opposite way: we loop over the particles and compute for each step the toroidal angle that we need to advance in order to fulfill the step size condition.
 
 Pros:
