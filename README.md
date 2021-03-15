@@ -1,6 +1,10 @@
 # FieldLineTracer
 This function traces magnetic field lines to compute Poincaré plots and connection length in tokamaks and stellarators given its 3-dimensional magnetic field components. 
 
+## 0. Branches
+- *v1.0: This is the primary version where all functions were manually written*
+- ***v1.1: ***
+- *v2.0:*
 
 ## 1. Definition of Field Line
 A magnetic field line is a 3D curve for which the magnetic field is tangent at every point.
@@ -38,30 +42,25 @@ The differential equation in toroidal coordinates $[R, \phi, \theta]$ for the fi
 If a limiter or divertor 3-dimensional geometry is available, the option *lim_mod = 1* can be selected to compute more realistic trajectories.
 
 
-## 3. INPUTS
+## 3. Inputs
 To run this program, the following files are necessary:
   - a 3D magnetic equilibrium netcdf file containing radial, toroidal and vertical components of the field
   - a 3D limiter netcdf file containing information on the inside/outside for the simulation
  
-## 4. EXAMPLE
+## 4. Example
 Links to example files:
   - 3D magnetic equilibrium in netcdf format: https://mega.nz/file/EwsVUIiA#ZyX3waZSOhuUkpyO_aMJv_z_cmZKIGY9fqAY1HmpriM
   - 3D limiter file in netcdf format: https://mega.nz/file/Y1dl1aCQ#_-FDM5VHMNyA5Q2acpxoYyqjTxWYKoSuEYIQ5iu2Wuc
   
-## 5. RUNNING THE EXAMPLE
+### 4.1 Running the Example
 To run the example:
   - write the name of the files (full path): magnetic equilibrium and limiter
   - select if you want the limiter to be included with *lim_mode*
   - select if you want to compute the connection length with *lc_mode*
   - select if you want to print and plot debug options with *debug*
-
-
-## 6. Currently working version
-At the moment, *changes/Python* branch is the most updated. A pull request to *main* branch of the *Python* version and completion of the *Fortran* version will be done soon.
-
-### 6.1 2D version
+  - 
+### 4.1 2D version
 2D magnetic field and limiter can be easily replicated in the toroidal dimension to create a 3D version.
-
 
 ## Authors
 - Carlos Romero
