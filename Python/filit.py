@@ -33,7 +33,6 @@
 import netCDF4           as nc
 import numpy             as np
 
-import timeit
 import time
 
 from matplotlib import pyplot as plt
@@ -47,7 +46,7 @@ from filib      import read_data_hint,                 \
 
 from progress.bar import Bar
 
-from scipy.interpolate import interpn, interp2d
+from scipy.interpolate import interpn
 
 
 #==============================================================================
