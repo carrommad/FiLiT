@@ -61,7 +61,10 @@ plt.figure(1)
 # - plotting loop for intersections
 for target in range(ntargets):
 
-	plt.plot(intersect_R[target,:], intersect_Z[target,:], 'o', markersize=0.5)
+	#plt.plot(intersect_R[target,:], intersect_Z[target,:], 'o', markersize=0.5)
+	
+	plt.scatter(intersect_R[target,:], intersect_Z[target,:], c=connection_length)
+	plt.colorbar()
 	
 # - plotting initial targets
 plt.plot(intersect_R[:,0], intersect_Z[:,0], 'g*', markersize=1.5)
