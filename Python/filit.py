@@ -20,8 +20,11 @@
 #> 16 03 2021 - Carlos Romero
 #> 
 #> TO DO:
-#> - Comment 'plt.show()' for programmed shutdown
+#> - Comment 'plt.show()' for programmed shutdown.
 #> - In RK4, when doing interpolation: careful with 'fill_value=np.nan'!
+#> - Write more comprehensively 'step_phi_cylindrical_rk4'!
+#> - Try to write a fast version of the code without unnecessary copies and 
+#> transition arrays!
 #> - 
 #> 
 #==============================================================================
