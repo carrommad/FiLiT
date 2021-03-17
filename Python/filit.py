@@ -288,22 +288,14 @@ grid_points_3D = (grid_phi, grid_Z, grid_R)
 # - initial definition of connection length 
 connection_length = np.zeros(np.shape(targets_R))
 
-# - full copy of targets in the present iteration step in the 'for' loop
-"""
-targets_Z_lc1 = np.copy(targets_Z)
-targets_R_lc1 = np.copy(targets_R)
-"""
 
 #==============================================================================
 # 12.              F O R   P A R T I C L E   T R A C K I N G
 #==============================================================================
-# - full copy of targets at previous iteration step in the 'for' loop
+# - full copy of targets at prior iteration step in the 'for' loop
 targets_Z_prior = np.copy(targets_Z)
 targets_R_prior = np.copy(targets_R)
-"""
-targets_Z_lc0 = np.copy(targets_Z)
-targets_R_lc0 = np.copy(targets_R)
-"""
+
 # - define all particles initially as 'active' = 1
 active = np.ones(np.shape(targets_R))
 
@@ -329,15 +321,7 @@ for step in range(nsteps):
 	# particles
 	targets_Z_prior[active == 1.] = np.copy(targets_Z)
 	targets_R_prior[active == 1.] = np.copy(targets_R)
-	"""
-	targets_Z_lc0[active == 1.] = np.copy(targets_Z)
-	targets_R_lc0[active == 1.] = np.copy(targets_R)
-	"""
-	"""
-	# - silence the non-active particles
-	targets_Z_lc0[active == 0.] = np.nan
-	targets_R_lc0[active == 0.] = np.nan
-	"""
+
 	
 	#==============================================================================
 	# b.             T O R O I D A L   S T E P   A N D   A N G L E
@@ -398,22 +382,10 @@ for step in range(nsteps):
 	#==============================================================================
 	# f.   C O M P U T E   D I S T A N C E S   B E T W E E N   P H I   S T E P S
 	#==============================================================================
-	# - full copy of only active targets prior to deletion for connetion length
-	# computation
-	"""
-	targets_Z_lc1[active == 1.] = np.copy(targets_Z)
-	targets_R_lc1[active == 1.] = np.copy(targets_R)	
-	"""
-	
 	# - differentials and mean of radius between phi = k and phi = k-1
 	delta_Z =  targets_Z - targets_Z_prior[active == 1.]
 	delta_R =  targets_R - targets_R_prior[active == 1.]
 	mean_R  = (targets_R + targets_R_prior[active == 1.]) / 2 
-	"""
-	delta_Z =  targets_Z_lc1 - targets_Z_lc0
-	delta_R =  targets_R_lc1 - targets_R_lc0
-	mean_R  = (targets_R_lc1 + targets_R_lc0) / 2 
-	"""
 	
 	# - metric in cyllindrical coordinates between k and k-1 with element-wise
 	# operations
@@ -421,9 +393,7 @@ for step in range(nsteps):
 
 	# - summing to prior connection length for active particles only
 	connection_length[active == 1.] = connection_length[active == 1.] + metric
-	"""
-	connection_length = connection_length + metric * active
-	"""
+
 	
 	#==============================================================================
 	# g.                 E X I T   I F   N O   T A R G E T S
@@ -448,10 +418,7 @@ for step in range(nsteps):
 		# - save positions
 		intersect_Z[active == 1., plane] = np.copy(targets_Z)
 		intersect_R[active == 1., plane] = np.copy(targets_R)
-		"""
-		intersect_Z[:, plane] = np.copy(targets_Z_lc1)
-		intersect_R[:, plane] = np.copy(targets_R_lc1)
-		"""
+
 		# - update intersection plane counter
 		plane = plane + 1
 		
