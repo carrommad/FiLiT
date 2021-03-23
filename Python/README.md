@@ -1,6 +1,6 @@
-## filit.py
+## 1. filit.py
 This is the main field line tracing Python program.
-### Configuration
+### 1.1. Configuration
 Configure the run prior to execution:
   - select target mode between the following: 'matrix', 'line-horizontal', 'line-vertical'
     > tar_mode = 'line-horizontal'
@@ -15,25 +15,25 @@ Configure the run prior to execution:
   - full limiter limiter path (optional); if none, write the following:
     > lim_path     = ''
     
-### Execution
+### 1.2. Execution
 To run the script do:
 > python3 filit.py
  
 
-## fiload.py
+## 2. fiload.py
 This is an auxiliary Python script to load and plot the results of the main program.
-### Configuration
+### 2.1. Configuration
 - full path of *filit.py* output file:
   > filename = 'results/matrix_ntargets-10000_nturns-500'
 - boolean for plotting initial target distribution:
   > plot_initial = 0
   
-### Execution
+### 2.2. Execution
 To run the script do:
 > python3 fiload.py
 
 
-## filib.py
+## 3. filib.py
 This is an auxiliary Python script containing all the functions to run *filit.py* and *fiload.py*:
 -  **read_data_hint**: reads magnetic equilibrium data from *HINT* output file (see https://github.com/yasuhiro-suzuki/HINT3D.git).
 -  **read_limiter**: reads limiter data from *MKLIM* output file (see https://github.com/yasuhiro-suzuki/HINT3D.git).
@@ -45,7 +45,7 @@ This is an auxiliary Python script containing all the functions to run *filit.py
 -  **delete_outer_particles_limiter**: deletes particles outside dynamical limiter.
 -  **plot_Poincare_Lc**: this representation script provides Poincaré plots and connection length plots for the field line tracing done to our magnetic equilibrium.
 
-## Branches
+## 4. Branches
 ### v1.2 (default)
 - All interpolation functions are Python imported.
 - First loop on turns and then loop on particles.
