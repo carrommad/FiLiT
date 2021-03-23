@@ -3,52 +3,18 @@ This function traces magnetic field lines to compute Poincaré plots and connect
 
 ## 1. Definition of Field Line
 A magnetic field line is a 3D curve for which the magnetic field is tangent at every point.
-Define $\vec{\Gamma} \in \mathbf{R}^3$ as our 3D curve parametrized by $s \in \mathbf{R}$:
-- $$ \frac{\partial \vec{\Gamma}}{\partial s} = \vec{B}$$
 
-For simplication, consider the different component of our cuve as follows: 
-- $ \Gamma_R = R $
-- $ \Gamma_{\phi} = \phi $
-- $ \Gamma_Z = Z $.
-
-To obtain the corresponding scalar components of the differential equation, the Jacobian needs to be taken into account. 
-- **Explain better and add Jacobian to each coordinate type**
-
-
-### 1.1. Cylindrical Coordinates
-The differential equation in cylindrical coordinates $[R, \phi, Z]$ for the field lines being:
-
-- $$ \frac{\partial R}{\partial \phi} =  R \cdot \frac{B_R}{B_{\phi}}$$
-- $$ \frac{\partial Z}{\partial \phi} =  R \cdot \frac{B_Z}{B_{\phi}}$$
-
-
-considerin *k* as the toroidal index, the finite differences equation is:
-
-- $$ R(k+1) = R(k) + \Delta \phi \cdot  R(k) \cdot \frac{B_R(k)}{B_{\phi}(k)}$$
-- $$ Z(k+1) = Z(k) + \Delta \phi \cdot  R(k) \cdot \frac{B_Z(k)}{B_{\phi}(k)}$$
-
-
-### 1.2. Toroidal Coordinates
-The differential equation in toroidal coordinates $[R, \phi, \theta]$ for the field lines being:
-- **Pending implementation**
-
-
-### 1.3. Euler vs. Runge-Kutta
-
+We use a cylindrical magnetic field (R, phi, Z) to follow field lines
 
 ## 2. Limiter Geometry
-If a limiter or divertor 3-dimensional geometry is available, the option *lim_mod = 1* can be selected to compute more realistic trajectories.
-
+If a limiter geometry is available, the option can be selected to compute more realistic trajectories, dynamically deleting particles that go outside our limiter boundaries.
 
 ## 3. Inputs
 To run this program, the following files are necessary:
-  - a 3D magnetic equilibrium netcdf file containing radial, toroidal and vertical components of the field
-  - a 3D limiter netcdf file containing information on the inside/outside for the simulation
- 
-## 4. Example
-Links to example files:
-  - 3D magnetic equilibrium in netcdf format: https://mega.nz/file/EwsVUIiA#ZyX3waZSOhuUkpyO_aMJv_z_cmZKIGY9fqAY1HmpriM
-  - 3D limiter file in netcdf format: https://mega.nz/file/Y1dl1aCQ#_-FDM5VHMNyA5Q2acpxoYyqjTxWYKoSuEYIQ5iu2Wuc
+  - **3D cylindrical magnetic field** (preferably, an equilibrium) *netcdf* file containing radial, toroidal and vertical components of the field:
+    > https://mega.nz/file/EwsVUIiA#ZyX3waZSOhuUkpyO_aMJv_z_cmZKIGY9fqAY1HmpriM
+  - **3D limiter (optional)** *netcdf* file containing information on the inside/outside for the simulation:
+    > https://mega.nz/file/Y1dl1aCQ#_-FDM5VHMNyA5Q2acpxoYyqjTxWYKoSuEYIQ5iu2Wuc
 
 ## Authors
-- Carlos Romero
+- Carlos Romero Madrid
