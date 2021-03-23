@@ -45,7 +45,7 @@ This is an auxiliary Python script containing all the functions to run *filit.py
 -  **limiter_boundary**: computes the boundaries of the limiter just for plotting.
 -  **create_targets**: creates a target distribution in a line (horizontal or vertical) or a matrix. This function can be easily improved.
 -  **step_phi_cylindrical_rk4**: 4th order Runge-Kutta specific for the following field line cylindrical equation:
-  - ** field_line_function**: cylindrical equation of field line to be evaluated at the differents steps of a Runge-Kutta scheme.
+    - ** field_line_function**: cylindrical equation of field line to be evaluated at the differents steps of a Runge-Kutta scheme.
 -  **delete_outer_particles**: deletes particles outside computational boundaries.
 -  **delete_outer_particles_limiter**: deletes particles outside dynamical limiter.
 -  **plot_Poincare_Lc**: this representation script provides Poincaré plots and connection length plots for the field line tracing done to our magnetic equilibrium.
