@@ -19,6 +19,8 @@ Configure the run prior to execution:
 To run the script do:
   > python3 filit.py
  
+Depending on the number of targets, number of turns and plotting resolution (see *filib.py*), it can take from 2-100 minutes to compute and plot a field line tracing experiment.
+ 
 
 ## 2. fiload.py
 This is an auxiliary Python script to load and plot the results of the main program.
@@ -32,6 +34,7 @@ This is an auxiliary Python script to load and plot the results of the main prog
 To run the script do:
   > python3 fiload.py
 
+Depending on the number of targets, number of turns and plotting resolution (see *filib.py*), it can take from 2-7 minutes to load and plot a *filit.py* output file.
 
 ## 3. filib.py
 This is an auxiliary Python script containing all the functions to run *filit.py* and *fiload.py*:
