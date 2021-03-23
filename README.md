@@ -1,27 +1,6 @@
 # FiLiT
 This function traces magnetic field lines to compute Poincaré plots and connection length in tokamaks and stellarators given its 3-dimensional magnetic field components. 
 
-## 0. Branches
-### v1.0 (old)
-- All interpolation functions are manually written.
-- First loop on turns and then loop on particles.
-- Step size definition **not uniform** for every point but good approximation.
-- Plotting improvements were strongly needed.
-
-### v1.1 (default)
-- All interpolation functions are Python imported.
-- First loop on turns and then loop on particles.
-- Step size definition **not uniform** for every point but good approximation.
-- Plotting improvements were carried out, still work to do.
-- Difficult to parallelize but **fastest version**.
-
-### v2.0 (slow)
-- All interpolation functions are Python imported.
-- First loop on particles and then loop on turns.
-- Step size definition **uniform** for every point but good approximation.
-- Plotting improvements were carried out, still work to do.
-- Easier to parallelize particle loop but **slowest version**.
-
 ## 1. Definition of Field Line
 A magnetic field line is a 3D curve for which the magnetic field is tangent at every point.
 Define $\vec{\Gamma} \in \mathbf{R}^3$ as our 3D curve parametrized by $s \in \mathbf{R}$:
@@ -77,6 +56,39 @@ To run the example:
   - 
 ### 4.1 2D version
 2D magnetic field and limiter can be easily replicated in the toroidal dimension to create a 3D version.
+
+## Branches
+### v1.2 (default)
+- All interpolation functions are Python imported.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Difficult to parallelize but **fastest version**.
+- Possible **change of magnetic field periodicity** with respect to the limiter.
+
+### v1.1 (old)
+- All interpolation functions are Python imported.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Difficult to parallelize but **fastest version**.
+- Possibility to change magnetic field periodicity **not implemented**.
+
+### v1.0 (old)
+- All interpolation functions are manually written.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were strongly needed.
+- Possibility to change magnetic field periodicity **not implemented**.
+
+### v2.0 (slow)
+- All interpolation functions are Python imported.
+- First loop on particles and then loop on turns.
+- Step size definition **uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Easier to parallelize particle loop but **slowest version**.
+- Possibility to change magnetic field periodicity **not implemented**.
+
 
 ## Authors
 - Carlos Romero
