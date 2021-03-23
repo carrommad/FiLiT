@@ -1,24 +1,61 @@
-# Available versions
-Two versions are provided, differing in structure but with very similar content (functions and plotting).
+## Example
+Links to example files:
+  - 3D magnetic equilibrium in netcdf format: https://mega.nz/file/EwsVUIiA#ZyX3waZSOhuUkpyO_aMJv_z_cmZKIGY9fqAY1HmpriM
+  - 3D limiter file in netcdf format: https://mega.nz/file/Y1dl1aCQ#_-FDM5VHMNyA5Q2acpxoYyqjTxWYKoSuEYIQ5iu2Wuc
+  
+## filit.py
+### Configuration
+Configure the run prior to execution:
+  - select target mode between the following: 'matrix', 'line-horizontal', 'line-vertical'
+    > tar_mode = 'line-horizontal'
+  - choose number of targets per line:
+    > ntargets1D = 100
+  - choose number of toroidal turns:
+    > nturns = 50
+  - select the step size in mm of the field line for interpolation (this modifies variable *n_grid_phi_enhanced*; you can do it _ad hoc_):
+    > step_phi_mm = 1
+  - write the name (full path) of magnetic equilibrium 
+    > input_file   = 'snapfile.80.nc'
+  - full limiter limiter path (optional); if none, write the following:
+    > lim_path     = ''
+    
+### Execution
+To run the file do:
+> python3 filit.py
+ 
 
-## v1. Turns -> Particles
-The functions named ***field_line_tracer*** are structured in this way: given a step size for a given major radius, the toroidal angle increment is computed so that the length increment for a particle in a major radius positions coincides with a desired value (in mm).
+## fiload.py
 
-Pros:
-- Except for two *for* loops in the *particles* or *targets* (see ***field_line_tracer.mod***: *grid_neighbours* and *interpolate_field*), the rest of the operations is element-wise
 
-Cons:
-- Improvements need to be made when saving the intersections so that we can distinguish **which** particle is intersecting **where** (easy improvement)
-- Step size not the same for every particle as it depends on its radius (cylindrical geometry)
-- Difficult to parallelize (I've been told)
+## Branches
+### v1.2 (default)
+- All interpolation functions are Python imported.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Difficult to parallelize but **fastest version**.
+- Possible **change of magnetic field periodicity** with respect to the limiter.
+- 2D geometries not implemented but easy.
 
-## v2. Particles -> Turns
-The functions name ***filit*** are structured the opposite way: we loop over the particles and compute for each step the toroidal angle that we need to advance in order to fulfill the step size condition.
+### v1.1 (old)
+- All interpolation functions are Python imported.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Difficult to parallelize but **fastest version**.
+- Possibility to change magnetic field periodicity **not implemented**.
 
-Pros:
-- Seems to be a more intuitive approach
-- Easy to follow specific targets
-- Easy to parallelize (I've been told)
+### v1.0 (old)
+- All interpolation functions are manually written.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were strongly needed.
+- Possibility to change magnetic field periodicity **not implemented**.
 
-Cons:
-- Slower than the other version, I believe because there are no element-wise operations
+### v2.0 (slow)
+- All interpolation functions are Python imported.
+- First loop on particles and then loop on turns.
+- Step size definition **uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Easier to parallelize particle loop but **slowest version**.
+- Possibility to change magnetic field periodicity **not implemented**.
