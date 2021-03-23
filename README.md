@@ -4,7 +4,7 @@ This function traces magnetic field lines to compute Poincaré plots and connect
 ## 1. Definition of Field Line
 A magnetic field line is a 3D curve for which the magnetic field is tangent at every point.
 
-We use a cylindrical magnetic field (R, phi, Z) to follow field lines
+We use a cylindrical magnetic field (R, phi, Z) to follow field lines but, thanks to the modularity of the program, this can be easily modified to other geometries
 
 ## 2. Limiter Geometry
 If a limiter geometry is available, the option can be selected to compute more realistic trajectories, dynamically deleting particles that go outside our limiter boundaries.
