@@ -1,4 +1,4 @@
-# FieldLineTracer
+# FiLiT
 This function traces magnetic field lines to compute Poincaré plots and connection length in tokamaks and stellarators given its 3-dimensional magnetic field components. 
 
 ## 0. Branches
