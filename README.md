@@ -15,6 +15,40 @@ To run this program, the following files are necessary:
     > https://mega.nz/file/EwsVUIiA#ZyX3waZSOhuUkpyO_aMJv_z_cmZKIGY9fqAY1HmpriM
   - **3D limiter (optional)** *netcdf* file containing information on the inside/outside for the simulation:
     > https://mega.nz/file/Y1dl1aCQ#_-FDM5VHMNyA5Q2acpxoYyqjTxWYKoSuEYIQ5iu2Wuc
+    
+## 4. Branches
+### v1.2 (default)
+- All interpolation functions are Python imported.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Difficult to parallelize but **fastest version**.
+- Possible **change of magnetic field periodicity** with respect to the limiter.
+- 2D geometries not implemented but easy.
+- Contains **Fortran** version
+
+### v1.1 (old)
+- All interpolation functions are Python imported.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Difficult to parallelize but **fastest version**.
+- Possibility to change magnetic field periodicity **not implemented**.
+
+### v1.0 (old)
+- All interpolation functions are manually written.
+- First loop on turns and then loop on particles.
+- Step size definition **not uniform** for every point but good approximation.
+- Plotting improvements were strongly needed.
+- Possibility to change magnetic field periodicity **not implemented**.
+
+### v2.0 (slow)
+- All interpolation functions are Python imported.
+- First loop on particles and then loop on turns.
+- Step size definition **uniform** for every point but good approximation.
+- Plotting improvements were carried out, still work to do.
+- Easier to parallelize particle loop but **slowest version**.
+- Possibility to change magnetic field periodicity **not implemented**.
 
 ## Authors
 - Carlos Romero Madrid
