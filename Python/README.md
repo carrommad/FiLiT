@@ -4,6 +4,7 @@ Links to example files:
   - 3D limiter file in netcdf format: https://mega.nz/file/Y1dl1aCQ#_-FDM5VHMNyA5Q2acpxoYyqjTxWYKoSuEYIQ5iu2Wuc
   
 ## filit.py
+This is the main field line tracing Python program.
 ### Configuration
 Configure the run prior to execution:
   - select target mode between the following: 'matrix', 'line-horizontal', 'line-vertical'
@@ -20,12 +21,34 @@ Configure the run prior to execution:
     > lim_path     = ''
     
 ### Execution
-To run the file do:
+To run the script do:
 > python3 filit.py
  
 
 ## fiload.py
+This is an auxiliary Python script to load and plot the results of the main program.
+### Configuration
+- full path of *filit.py* output file:
+  > filename = 'results/matrix_ntargets-10000_nturns-500'
+- boolean for plotting initial target distribution:
+  > plot_initial = 0
+  
+### Execution
+To run the script do:
+> python3 fiload.py
 
+
+## filib.py
+This is an auxiliary Python script containing all the functions to run *filit.py* and *fiload.py*:
+-  **read_data_hint**: reads magnetic equilibrium data from *HINT* output file (see https://github.com/yasuhiro-suzuki/HINT3D.git).
+-  **read_limiter**: reads limiter data from *MKLIM* output file (see https://github.com/yasuhiro-suzuki/HINT3D.git).
+-  **limiter_boundary**: computes the boundaries of the limiter just for plotting.
+-  **create_targets**: creates a target distribution in a line (horizontal or vertical) or a matrix. This function can be easily improved.
+-  **step_phi_cylindrical_rk4**: 4th order Runge-Kutta specific for the following field line cylindrical equation:
+  - ** field_line_function**: cylindrical equation of field line to be evaluated at the differents steps of a Runge-Kutta scheme.
+-  **delete_outer_particles**: deletes particles outside computational boundaries.
+-  **delete_outer_particles_limiter**: deletes particles outside dynamical limiter.
+-  **plot_Poincare_Lc**: this representation script provides Poincaré plots and connection length plots for the field line tracing done to our magnetic equilibrium.
 
 ## Branches
 ### v1.2 (default)
