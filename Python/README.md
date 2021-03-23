@@ -17,7 +17,7 @@ Configure the run prior to execution:
     
 ### 1.2. Execution
 To run the script do:
-> python3 filit.py
+  > python3 filit.py
  
 
 ## 2. fiload.py
@@ -30,7 +30,7 @@ This is an auxiliary Python script to load and plot the results of the main prog
   
 ### 2.2. Execution
 To run the script do:
-> python3 fiload.py
+  > python3 fiload.py
 
 
 ## 3. filib.py
