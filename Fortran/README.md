@@ -1,5 +1,5 @@
-## 1. filit.py
-This is the main field line tracing **Python3** program.
+## 1. filit.F90
+This is the main field line tracing **Fortran** program.
 ### 1.1. Configuration
 Configure the run prior to execution:
   - select target mode between the following: 'matrix', 'line-horizontal', 'line-vertical'
@@ -17,27 +17,27 @@ Configure the run prior to execution:
     
 ### 1.2. Execution
 To run the script do:
-  > python3 filit.py
+  > (***???***)
  
-Depending on the number of targets, number of turns and plotting resolution (see *filib.py*), it can take from 1-100 minutes to compute and plot a field line tracing experiment.
+Depending on the number of targets, number of turns and plotting resolution (see *filib.f90*), it can take from 1-100 (***???***) minutes to compute and plot a field line tracing experiment.
  
 
-## 2. fiload.py
-This is an auxiliary **Python3** script to load and plot the results of the main program.
+## 2. fiload.f90
+This is an auxiliary **Fortran** script to load and plot the results of the main program.
 ### 2.1. Configuration
-- full path of *filit.py* output file:
+- full path of *filit.f90* output file:
   > filename = 'results/matrix_ntargets-10000_nturns-500'
 - boolean for plotting initial target distribution:
   > plot_initial = 0
   
 ### 2.2. Execution
 To run the script do:
-  > python3 fiload.py
+  > (***???***)
 
-Depending on the number of targets, number of turns and plotting resolution (see *filib.py*), it can take from 1-10 minutes to load and plot a *filit.py* output file.
+Depending on the number of targets, number of turns and plotting resolution (see *filib.f90*), it can take from 1-10 (***???***) minutes to load and plot a *filit.f90* output file.
 
 ## 3. filib.py
-This is an auxiliary **Python3** script containing all the functions to run *filit.py* and *fiload.py*:
+This is an auxiliary **Fortran** script containing all the functions to run *filit.f90* and *fiload.f90*:
 -  **read_data_hint**: reads magnetic equilibrium data from *HINT* output file (see https://github.com/yasuhiro-suzuki/HINT3D.git).
 -  **read_limiter**: reads limiter data from *MKLIM* output file (see https://github.com/yasuhiro-suzuki/HINT3D.git).
 -  **limiter_boundary**: computes the boundaries of the limiter just for plotting.
@@ -57,6 +57,7 @@ This is an auxiliary **Python3** script containing all the functions to run *fil
 - Difficult to parallelize but **fastest version**.
 - Possible **change of magnetic field periodicity** with respect to the limiter.
 - 2D geometries not implemented but easy.
+- Contains **Fortran** version
 
 ### v1.1 (old)
 - All interpolation functions are Python imported.
