@@ -8,7 +8,7 @@ Configure the run prior to execution:
     > ntargets1D = 100
   - choose number of toroidal turns:
     > nturns = 50
-  - select the step size in mm of the field line for interpolation (this modifies variable *n_grid_phi_enhanced*; you can do it _ad hoc_):
+  - select the step size in mm of the field line for interpolation (this modifies variable **n_grid_phi_enhanced**; you can do it *ad hoc*):
     > step_phi_mm = 1
   - write the name (full path) of magnetic equilibrium 
     > input_file   = 'snapfile.80.nc'
