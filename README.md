@@ -1,4 +1,4 @@
-[Poincaré plot](cover.png)
+![Poincaré plot](cover.png)
 
 ## 1. filit.py
 This is the main field line tracing **Python3** program.
