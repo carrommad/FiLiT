@@ -1,3 +1,5 @@
+![Poincaré plot](images/matrix_ntargets-10000_nturns-1000_Btor-10_Pp.png)
+
 ## 1. filit.py
 This is the main field line tracing **Python3** program.
 ### 1.1. Configuration
