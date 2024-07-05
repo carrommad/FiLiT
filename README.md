@@ -64,9 +64,9 @@ If a limiter geometry is available, the option can be selected to compute more r
 ## 3. Inputs
 To run this program, the following files are necessary:
   - **3D cylindrical (magnetic) field** (for magnetic fields, preferably an equilibrium) *netcdf* file containing radial, toroidal and vertical components of the field:
-    > https://mega.nz/file/EwsVUIiA#ZyX3waZSOhuUkpyO_aMJv_z_cmZKIGY9fqAY1HmpriM
+    > https://mega.nz/file/kk1mmKjK#ZyX3waZSOhuUkpyO_aMJv_z_cmZKIGY9fqAY1HmpriM
   - **3D limiter (optional)** *netcdf* file containing information on the inside/outside for the simulation:
-    > https://mega.nz/file/Y1dl1aCQ#_-FDM5VHMNyA5Q2acpxoYyqjTxWYKoSuEYIQ5iu2Wuc
+    > https://mega.nz/file/cltyUTxI#qp17DSp_pkJovx3cDTcIavt6kdzk0tJzIvyeJknn9mw
     
 ## 4. Branches
 ### v1.2 (default)
